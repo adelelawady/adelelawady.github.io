@@ -1,5 +1,5 @@
 import SkillBadge from "../ui/SkillBadge";
-import { Code2, Braces, Terminal, Database, Server, Github, Cloud, Git } from "lucide-react";
+import { Code2, Braces, Terminal, Database, Server, Github, Cloud, GitBranch } from "lucide-react";
 
 const Skills = () => {
   const skills = [
@@ -10,7 +10,7 @@ const Skills = () => {
     { name: "PostgreSQL", icon: <Database className="w-12 h-12 text-primary" /> },
     { name: "Docker", icon: <Server className="w-12 h-12 text-primary" /> },
     { name: "AWS", icon: <Cloud className="w-12 h-12 text-primary" /> },
-    { name: "Git", icon: <Git className="w-12 h-12 text-primary" /> },
+    { name: "Git", icon: <GitBranch className="w-12 h-12 text-primary" /> },
   ];
 
   return (
