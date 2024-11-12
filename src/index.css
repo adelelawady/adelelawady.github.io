@@ -42,10 +42,21 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    background-image: url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
   }
   html {
     @apply scroll-smooth;
   }
+}
+
+.bg-grid-slate-900\/\[0\.04\] {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  background-image: linear-gradient(to right, rgb(15 23 42 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(15 23 42 / 0.04) 1px, transparent 1px);
 }
 
 .animate-fade-up {
