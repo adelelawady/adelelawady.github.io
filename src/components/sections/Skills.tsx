@@ -1,16 +1,21 @@
 import SkillBadge from "../ui/SkillBadge";
-import { Code2, Braces, Terminal, Database, Server, Github, Cloud, GitBranch } from "lucide-react";
+import { Code2, Braces, Terminal, Database, Server, Github, Cloud, GitBranch, AngryIcon, Container, Coffee, Leaf, DatabaseZap } from "lucide-react";
 
 const Skills = () => {
   const skills = [
     { name: "React", icon: <Braces className="w-12 h-12 text-primary" /> },
     { name: "TypeScript", icon: <Code2 className="w-12 h-12 text-primary" /> },
+    { name: "Java", icon: <Coffee className="w-12 h-12 text-primary" /> },
+    { name: "SpringBoot", icon: <Leaf className="w-12 h-12 text-primary" /> },
+    { name: "Angular", icon: <Code2 className="w-12 h-12 text-primary" /> },
     { name: "Node.js", icon: <Terminal className="w-12 h-12 text-primary" /> },
     { name: "Python", icon: <Code2 className="w-12 h-12 text-primary" /> },
-    { name: "PostgreSQL", icon: <Database className="w-12 h-12 text-primary" /> },
+    { name: "MongoDB", icon: <Database className="w-12 h-12 text-primary" /> },
+    { name: "SQl", icon: <DatabaseZap className="w-12 h-12 text-primary" /> },
     { name: "Docker", icon: <Server className="w-12 h-12 text-primary" /> },
-    { name: "AWS", icon: <Cloud className="w-12 h-12 text-primary" /> },
+   // { name: "AWS", icon: <Cloud className="w-12 h-12 text-primary" /> },
     { name: "Git", icon: <GitBranch className="w-12 h-12 text-primary" /> },
+
   ];
 
   return (

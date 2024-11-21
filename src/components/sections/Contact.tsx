@@ -2,13 +2,50 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 import { toast } from "sonner";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Message sent successfully!");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
   };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_h21j54c",     // Replace with your EmailJS Service ID
+        "template_ihdaxr7",     // Replace with your EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "yQiRiLu7sxHxOGd1o"          // Replace with your EmailJS User ID
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" }); // Clear form
+        },
+        (error) => {
+          console.error("Failed to send message:", error);
+          toast.error("Failed to send message. Please try again.");
+        }
+      );
+  };
+
 
   return (
     <section className="py-20 px-4" id="contact">
@@ -26,11 +63,24 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name">Name</label>
-                  <Input id="name" placeholder="Your name" required />
+                  <Input
+                    id="name"
+                    placeholder="Your name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email">Email</label>
-                  <Input id="email" type="email" placeholder="Your email" required />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="Your email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
               <div className="space-y-2">
@@ -40,6 +90,8 @@ const Contact = () => {
                   placeholder="Your message"
                   className="min-h-[150px]"
                   required
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </div>
               <Button type="submit" className="w-full">

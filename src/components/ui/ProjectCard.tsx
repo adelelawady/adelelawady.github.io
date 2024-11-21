@@ -42,13 +42,13 @@ const ProjectCard = ({
           ))}
         </div>
         <div className="flex gap-2">
-          {githubUrl && (
+          {githubUrl && githubUrl!=null && (
             <Button variant="outline" size="sm" onClick={() => window.open(githubUrl, "_blank")}>
               <Github className="mr-2 h-4 w-4" />
               Code
             </Button>
           )}
-          {liveUrl && (
+          {liveUrl && liveUrl!=null &&  (
             <Button variant="outline" size="sm" onClick={() => window.open(liveUrl, "_blank")}>
               <Globe className="mr-2 h-4 w-4" />
               Live Demo
