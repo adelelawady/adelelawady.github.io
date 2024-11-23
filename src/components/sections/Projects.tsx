@@ -52,7 +52,15 @@ const Projects = () => {
       liveUrl: "https://adelelawady.github.io/cv_wizardy/",
       imageUrl: "https://github.com/user-attachments/assets/093b05af-b885-465d-8241-3a8a78c9c98a",
     }
-
+    ,
+    {
+      title: "Convertopia Manager",
+      description: "A powerful file conversion tool built with React and TypeScript that supports multiple file formats and provides high-quality conversions.",
+      technologies: ["React" , "Vite", "Pyodide","ffmpeg"],
+      githubUrl: "https://github.com/adelelawady/convertopia-manager",
+      liveUrl: "https://adelelawady.github.io/convertopia-manager/",
+      imageUrl: "https://github.com/user-attachments/assets/759c493d-05b4-4356-bdbb-f9bed853f913",
+    }
   ];
 
   return (
